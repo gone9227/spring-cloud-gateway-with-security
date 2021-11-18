@@ -24,9 +24,4 @@ public class AuthController {
         return Mono.just(ResponseEntity.ok(authService.login(loginDto)));
     }
 
-    @GetMapping("/test")
-    public String test(){
-        return "test";
-    }
-
 }
