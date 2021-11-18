@@ -4,13 +4,12 @@ import com.scg.jpa.entity.Member;
 import com.scg.jpa.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.*;
-import org.springframework.stereotype.Service;
+import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
+import org.springframework.security.core.userdetails.UserDetails;
 import reactor.core.publisher.Mono;
 
 import java.util.Collections;
 
-@Service("userDetailsService")
 @RequiredArgsConstructor
 public class CustomUserDetailService implements ReactiveUserDetailsService {
 

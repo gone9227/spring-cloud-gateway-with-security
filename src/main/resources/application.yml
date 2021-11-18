@@ -2,14 +2,10 @@ server:
   port: 8881
 
 spring:
+  profiles:
+    include: db
   application:
-    name: 1qonfront-gateway
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: inobisadm
-    password: inobisadm
-    platform: postgres
+    name: scg-test
   jpa:
     hibernate:
       ddl-auto: update
