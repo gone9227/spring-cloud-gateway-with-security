@@ -1,0 +1,35 @@
+server:
+  port: 8881
+
+spring:
+  application:
+    name: 1qonfront-gateway
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: inobisadm
+    password: inobisadm
+    platform: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: gateway, refresh, shutdown
+    endpoint:
+      gateway:
+        enabled: true
+      shutdown:
+        enabled: true
+logging:
+  level:
+    org.springframework.web: DEBUG
+    guru.springframework.controllers: DEBUG
+    org.hibernate: DEBUG
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: INFO
